@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="1138.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <TabPane layoutX="4.0" layoutY="-2.0" prefHeight="700.0" prefWidth="1138.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="TabTwo" text="Roster">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="TextAreaSched" layoutX="199.0" layoutY="17.0" prefHeight="597.0" prefWidth="287.0" />
+                        <ListView fx:id="TotalLifeguards" layoutX="561.0" layoutY="17.0" prefHeight="583.0" prefWidth="243.0" />
+                        <Button fx:id="RegenButton" layoutX="11.0" layoutY="303.0" mnemonicParsing="false" onAction="#regenerateSched" prefHeight="26.0" prefWidth="173.0" text="Generate Schedule" />
+                        <Button fx:id="SaveButton" layoutX="497.0" layoutY="17.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="55.0" text="Save" />
+                        <Button fx:id="LoadButton" layoutX="497.0" layoutY="53.0" mnemonicParsing="false" onAction="#loadSched" prefHeight="26.0" prefWidth="56.0" text="Load" />
+                        <Button fx:id="ClearButton" layoutX="496.0" layoutY="92.0" mnemonicParsing="false" onAction="#clearSched" prefHeight="26.0" prefWidth="57.0" text="Clear" />
+                        <Button fx:id="SubtractYearButton" layoutX="563.0" layoutY="619.0" mnemonicParsing="false" onAction="#subtractYear" prefHeight="26.0" prefWidth="38.0" text="-" />
+                        <Button fx:id="AddYearButton" layoutX="773.0" layoutY="620.0" mnemonicParsing="false" onAction="#addYear" prefHeight="26.0" prefWidth="32.0" text="+" />
+                        <Label layoutX="640.0" layoutY="621.0" prefHeight="17.0" prefWidth="143.0" text="Update Year">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="LifeguardNameField" layoutX="817.0" layoutY="39.0" prefHeight="26.0" prefWidth="195.0" promptText="Print full name" />
+                        <Button fx:id="AddGuardButton" layoutX="817.0" layoutY="80.0" mnemonicParsing="false" onAction="#addLifeguard" prefHeight="26.0" prefWidth="191.0" text="Add Guard" />
+                        <TextField fx:id="LifeguardYearField" layoutX="1017.0" layoutY="40.0" prefHeight="26.0" prefWidth="67.0" promptText="Year" />
+                        <Button fx:id="RemoveGuardButton" layoutX="818.0" layoutY="121.0" mnemonicParsing="false" onAction="#removeLifeguard" prefHeight="26.0" prefWidth="191.0" text="Remove Guard" />
+                        <Label layoutX="819.0" layoutY="14.0" prefHeight="17.0" prefWidth="194.0" text="Add or Remove Lifeguard">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="165.0" fitWidth="168.0" layoutX="20.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../Desktop/Unknown.png" />
+                           </image>
+                        </ImageView>
+                        <Slider fx:id="SliderOne" layoutX="14.0" layoutY="216.0" max="10.0" />
+                        <Label fx:id="SliderLabelOne" layoutX="168.0" layoutY="215.0" text="Auto" />
+                        <Slider fx:id="SliderTwo" layoutX="14.0" layoutY="270.0" max="10.0" />
+                        <Label layoutX="20.0" layoutY="188.0" text="T.C. required weekday" />
+                        <Label layoutX="20.0" layoutY="247.0" text="T.C. required weekend" />
+                        <Label fx:id="SliderLabelTwo" layoutX="168.0" layoutY="269.0" text="Auto" />
+                        <Label fx:id="LifeguardNameLabel" layoutX="863.0" layoutY="174.0" prefHeight="24.0" prefWidth="135.0" text="Lifeguard Name">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <CheckBox fx:id="MondayBox" layoutX="1033.0" layoutY="222.0" mnemonicParsing="false" text="Monday" />
+                        <CheckBox fx:id="ThursdayBox" layoutX="1033.0" layoutY="285.0" mnemonicParsing="false" text="Thursday" />
+                        <CheckBox fx:id="WednesdayBox" layoutX="1033.0" layoutY="264.0" mnemonicParsing="false" text="Wednesday" />
+                        <CheckBox fx:id="TuesdayBox" layoutX="1033.0" layoutY="243.0" mnemonicParsing="false" text="Tuesday" />
+                        <CheckBox fx:id="FridayBox" layoutX="1033.0" layoutY="307.0" mnemonicParsing="false" text="Friday" />
+                        <CheckBox fx:id="SaturdayBox" layoutX="1033.0" layoutY="328.0" mnemonicParsing="false" text="Saturday" />
+                        <CheckBox fx:id="SundayBox" layoutX="1033.0" layoutY="349.0" mnemonicParsing="false" text="Sunday" />
+                        <CheckBox fx:id="AllBox" layoutX="1033.0" layoutY="201.0" mnemonicParsing="false" text="All" />
+                        <Button fx:id="SaveDaysOffButton" layoutX="1034.0" layoutY="378.0" mnemonicParsing="false" onAction="#setDaysOff" prefHeight="26.0" prefWidth="85.0" text="Save" />
+                        <TextArea fx:id="LifeguardScheduleTextArea" layoutX="816.0" layoutY="203.0" prefHeight="200.0" prefWidth="200.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Schedule">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane fx:id="ScheduleGrid" gridLinesVisible="true" layoutX="158.0" layoutY="60.0" prefHeight="588.0" prefWidth="958.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="85.22944641113281" minHeight="10.0" prefHeight="85.22944641113281" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="82.77055358886719" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                        <Label layoutX="35.0" layoutY="79.0" prefHeight="40.0" prefWidth="81.0" text="Monday">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="38.0" layoutY="169.0" prefHeight="32.0" prefWidth="86.0" text="Tuesday">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="36.0" layoutY="249.0" prefHeight="43.0" prefWidth="120.0" text="Wednesday">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="36.0" layoutY="340.0" text="Thursday">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="41.0" layoutY="427.0" text="Friday">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="40.0" layoutY="511.0" text="Saturday">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="601.0" text="Sunday">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="PopulateButton" layoutX="7.0" layoutY="1.0" mnemonicParsing="false" onAction="#popScheduleWithFont" text="Populate" />
+                        <Label layoutX="305.0" layoutY="27.0" text="Off">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="587.0" layoutY="27.0" text="Smith Point">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="919.0" layoutY="27.0" text="Cupsogue">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Slider fx:id="FontSizeSlider" layoutX="9.0" layoutY="53.0" majorTickUnit="1.0" max="20.0" min="6.0" prefHeight="16.0" prefWidth="123.0" snapToTicks="true" />
+                        <Label layoutX="12.0" layoutY="32.0" text="Font size:" />
+                        <Button fx:id="RegenButton2" layoutX="92.0" layoutY="2.0" mnemonicParsing="false" onAction="#regenerateSched" text="Regenerate" />
+                        <Label fx:id="FontSizeLabel" layoutX="77.0" layoutY="32.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
